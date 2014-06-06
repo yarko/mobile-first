@@ -1,0 +1,4 @@
+# sniffin-sticks app - dartlang
+*.lock
+packages
+
