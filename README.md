@@ -10,5 +10,5 @@ Some of the things of interest:
  * how can  a single page app be deployed to disconnectecd mobiles (e.g. iOS, Android, WinMobile);
 
 Initially, the *Recipe Book AngularDart application* from the
-[angular-dart-tutorial's](https://angulardart.org/tutorial) recipe book example was the starting point.
+[angular-dart-tutorial](https://angulardart.org/tutorial) was the starting point.
 
