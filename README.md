@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/yarko/sniffin-sticks.png?label=ready&title=Ready)](https://waffle.io/yarko/sniffin-sticks)
 # Sniffin' Sticks app
 
 This is an exploratory app to create a mobile-first
