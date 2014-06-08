@@ -12,5 +12,5 @@ Some of the things of interest:
 Initially, the *Recipe Book AngularDart application* from the
 [angular-dart-tutorial](https://angulardart.org/tutorial) is the starting point.
 
-See the repository [wiki](wiki) for more information.
+See the repository [wiki](/wiki) for more information.
 
