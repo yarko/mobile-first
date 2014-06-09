@@ -1,5 +1,7 @@
-[![Stories in Ready](https://badge.waffle.io/yarko/sniffin-sticks.png?label=ready&title=Ready)](https://waffle.io/yarko/sniffin-sticks)
-# Sniffin' Sticks app
+[![Stories in Ready](https://badge.waffle.io/yarko/mobile-first.png?label=ready&title=Ready)](https://waffle.io/yarko/mobile-first)
+
+[![Stories in Ready](https://badge.waffle.io/yarko/mobile-first.png?label=in-progress&title=In+Progress)](https://waffle.io/yarko/mobile-first)
+# Olfactory Test app (`sens`)
 
 This is an exploratory app to create a mobile-first
 app for application of field tests for researchers.
@@ -13,7 +15,7 @@ Some of the things of interest:
 Initially, the *Recipe Book AngularDart application* from the
 [angular-dart-tutorial](https://angulardart.org/tutorial) is the starting point.
 
-See the repository [wiki](https://github.com/yarko/sniffin-sticks/wiki) for more information.
+See the repository [wiki](https://github.com/yarko/mobile-first/wiki) for more information.
 
 
 ### Startup Tasks / Status:
