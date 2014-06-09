@@ -1,0 +1,3 @@
+[submodule "mobile-first.wiki"]
+	path = mobile-first.wiki
+	url = git@github.com:yarko/mobile-first.wiki.git
