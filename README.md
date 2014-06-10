@@ -35,12 +35,13 @@ We like that huboard is open source.
 We much prefer that huboard makes easy drag of issues into milestones,
 and that it has separate task and milestones views.
 HuBoard also provides richer filters.
-We were going to using huboard.com on the repo, with
-just the waffle.io api for specifying the *nice* badges,
-but coded to the more complete (and also hardcoded) set which huboard.com uses.
+We were going to use huboard.com on the repo, with
+waffle.io api only for specifying the *nice* badges,
+referring to the more complete (and also hardcoded) labels which huboard.com uses.
 Between the two webhooks, we lost (yes! lost) issues - deleted - so we've disconnected
 waffle.io for the time being.
 We'll see for a short while how huboard behaves.
+Yes, Virginia, robustness is important.
 
 * just use huboard.com or github for managing tasks.
 
