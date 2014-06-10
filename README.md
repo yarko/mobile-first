@@ -1,6 +1,9 @@
+## Issues / [Stories](http://waffle.io/yarko/mobile-first) status: 
+[![Stories in Backlog](https://badge.waffle.io/yarko/mobile-first.png?label=backlog&title=Backlog)](https://waffle.io/yarko/mobile-first)
 [![Stories in Ready](https://badge.waffle.io/yarko/mobile-first.png?label=ready&title=Ready)](https://waffle.io/yarko/mobile-first)
+[![Stories In Progress](https://badge.waffle.io/yarko/mobile-first.png?label=in-progress&title=In+Progress)](https://waffle.io/yarko/mobile-first)
+[![Stories in Done](https://badge.waffle.io/yarko/mobile-first.png?label=done&title=Done)](https://waffle.io/yarko/mobile-first)
 
-[![Stories in Ready](https://badge.waffle.io/yarko/mobile-first.png?label=in-progress&title=In+Progress)](https://waffle.io/yarko/mobile-first)
 # Olfactory Test app (`sens`)
 
 This is an exploratory app to create a mobile-first
@@ -16,6 +19,29 @@ Initially, the *Recipe Book AngularDart application* from the
 [angular-dart-tutorial](https://angulardart.org/tutorial) is the starting point.
 
 See the repository [wiki](https://github.com/yarko/mobile-first/wiki) for more information.
+
+----
+**Note:** Cloning this repository clones the wiki pages as a submodule.
+Developer notes may be useful to have locally.
+For OS X, [Mou](http://mouapp.com) is one convenient way to render markdown,
+as well as output pdf (`github` CSS presets are convenient).
+
+Feel free to update the wiki thru git.
+Simply `cd` to `mobile-first.wiki`, and `git commit` from there.
+
+**Note:** We're pushing our use of github some.
+Currently, looking between [HuBoard.com](https://github.com/rauhryan/huboard) (ruby)
+and [waffle.io](http://waffle.io) (node/coffeescipt).
+We like waffle badges.
+We like that huboard is open source.
+We much prefer that huboard makes easy drag of issues into milestones,
+and that it has separate task and milestones views.
+HuBoard also provides richer filters.
+We're actually using both services at the moment on the repo.
+This actually inspires us to look closely at the github API soon
+(a good excuse for a golang project, don't you think?).
+
+----
 
 
 ### Startup Tasks / Status:
@@ -49,7 +75,7 @@ See the repository [wiki](https://github.com/yarko/mobile-first/wiki) for more i
 
 ##### Development:
 
-- [ ] angular.dart tutorial, modify for single even `sniffin sticks` instance
+- [ ] angular.dart tutorial, modify for single even `sens` instance
   - [ ] browser
   - [ ] mobile emulators
   - [ ] mobile hardware / team review, initial reactions;
