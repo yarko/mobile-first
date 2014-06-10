@@ -1,9 +1,3 @@
-## Issues / [Stories](http://huboard.com/yarko/mobile-first) status: 
-[![Stories in Backlog](https://badge.waffle.io/yarko/mobile-first.png?label=0+-+Backlog&title=Backlog)](https://waffle.io/yarko/mobile-first)
-[![Stories in Ready](https://badge.waffle.io/yarko/mobile-first.png?label=1+-+Ready&title=Ready)](https://waffle.io/yarko/mobile-first)
-[![Stories In Progress](https://badge.waffle.io/yarko/mobile-first.png?label=2+-+Working&title=Working)](https://waffle.io/yarko/mobile-first)
-[![Stories in Done](https://badge.waffle.io/yarko/mobile-first.png?label=3+-+Done&title=Done)](https://waffle.io/yarko/mobile-first)
-
 <!--
 A nice reference: http://code.tutsplus.com/articles/team-collaboration-with-github--net-29876
 -->
@@ -41,15 +35,16 @@ We like that huboard is open source.
 We much prefer that huboard makes easy drag of issues into milestones,
 and that it has separate task and milestones views.
 HuBoard also provides richer filters.
-We're actually using huboard.com at the moment on the repo, with
+We were going to using huboard.com on the repo, with
 just the waffle.io api for specifying the *nice* badges,
 but coded to the more complete (and also hardcoded) set which huboard.com uses.
-In a kludgy sort of way, we have the best of both.
+Between the two webhooks, we lost (yes! lost) issues - deleted - so we've disconnected
+waffle.io for the time being.
+We'll see for a short while how huboard behaves.
 
-* please do not login to waffle.io for this project (it will break labels if you move something).
 * just use huboard.com or github for managing tasks.
 
-This actually inspires us to look closely at the github API soon
+This inspires us to look at the github API soon and build our own tool, properly
 (a good excuse for a golang project, don't you think?).
 
 ----
