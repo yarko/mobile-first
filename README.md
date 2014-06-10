@@ -1,5 +1,5 @@
 ## Issues / [Stories](http://waffle.io/yarko/mobile-first) status: 
-[![Stories in Backlog](https://badge.waffle.io/yarko/mobile-first.png?label=Backlog&title=Backlog)](https://waffle.io/yarko/mobile-first)
+[![Stories in Backlog](https://badge.waffle.io/yarko/mobile-first.png?label=backlog&title=Backlog)](https://waffle.io/yarko/mobile-first)
 [![Stories in Ready](https://badge.waffle.io/yarko/mobile-first.png?label=ready&title=Ready)](https://waffle.io/yarko/mobile-first)
 [![Stories In Progress](https://badge.waffle.io/yarko/mobile-first.png?label=in-progress&title=In+Progress)](https://waffle.io/yarko/mobile-first)
 [![Stories in Done](https://badge.waffle.io/yarko/mobile-first.png?label=done&title=Done)](https://waffle.io/yarko/mobile-first)
