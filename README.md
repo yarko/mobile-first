@@ -4,6 +4,9 @@
 [![Stories In Progress](https://badge.waffle.io/yarko/mobile-first.png?label=in-progress&title=In+Progress)](https://waffle.io/yarko/mobile-first)
 [![Stories in Done](https://badge.waffle.io/yarko/mobile-first.png?label=done&title=Done)](https://waffle.io/yarko/mobile-first)
 
+<!--
+A nice reference: http://code.tutsplus.com/articles/team-collaboration-with-github--net-29876
+-->
 # Olfactory Test app (`sens`)
 
 This is an exploratory app to create a mobile-first
