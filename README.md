@@ -1,8 +1,8 @@
-## Issues / [Stories](http://waffle.io/yarko/mobile-first) status: 
-[![Stories in Backlog](https://badge.waffle.io/yarko/mobile-first.png?label=backlog&title=Backlog)](https://waffle.io/yarko/mobile-first)
-[![Stories in Ready](https://badge.waffle.io/yarko/mobile-first.png?label=ready&title=Ready)](https://waffle.io/yarko/mobile-first)
-[![Stories In Progress](https://badge.waffle.io/yarko/mobile-first.png?label=in-progress&title=In+Progress)](https://waffle.io/yarko/mobile-first)
-[![Stories in Done](https://badge.waffle.io/yarko/mobile-first.png?label=done&title=Done)](https://waffle.io/yarko/mobile-first)
+## Issues / [Stories](http://huboard.com/yarko/mobile-first) status: 
+[![Stories in Backlog](https://badge.waffle.io/yarko/mobile-first.png?label=0+-+Backlog&title=Backlog)](https://waffle.io/yarko/mobile-first)
+[![Stories in Ready](https://badge.waffle.io/yarko/mobile-first.png?label=1+-+Ready&title=Ready)](https://waffle.io/yarko/mobile-first)
+[![Stories In Progress](https://badge.waffle.io/yarko/mobile-first.png?label=2+-+Working&title=Working)](https://waffle.io/yarko/mobile-first)
+[![Stories in Done](https://badge.waffle.io/yarko/mobile-first.png?label=3+-+Done&title=Done)](https://waffle.io/yarko/mobile-first)
 
 <!--
 A nice reference: http://code.tutsplus.com/articles/team-collaboration-with-github--net-29876
@@ -36,11 +36,19 @@ Simply `cd` to `mobile-first.wiki`, and `git commit` from there.
 Currently, looking between [HuBoard.com](https://github.com/rauhryan/huboard) (ruby)
 and [waffle.io](http://waffle.io) (node/coffeescipt).
 We like waffle badges.
+But they don't interface well with the waffle website (only 2 display, label change/clear hard-coded in waffle.io).
 We like that huboard is open source.
 We much prefer that huboard makes easy drag of issues into milestones,
 and that it has separate task and milestones views.
 HuBoard also provides richer filters.
-We're actually using both services at the moment on the repo.
+We're actually using huboard.com at the moment on the repo, with
+just the waffle.io api for specifying the *nice* badges,
+but coded to the more complete (and also hardcoded) set which huboard.com uses.
+In a kludgy sort of way, we have the best of both.
+
+* please do not login to waffle.io for this project (it will break labels if you move something).
+* just use huboard.com or github for managing tasks.
+
 This actually inspires us to look closely at the github API soon
 (a good excuse for a golang project, don't you think?).
 
@@ -64,7 +72,7 @@ This actually inspires us to look closely at the github API soon
 - [x] bringup methods / tutorials for angular.dart
 - [x] bringup methods / tutorials for cordova (w/ ios & android emulation)
 - [ ] bringup methods / tutorials for integrating Rikolu
-- [x] agile tracking (waffle.io for now, plus github issues, PRs)
+- [x] agile tracking (huboard.com w/ waffle.io image tags for now, plus github issues, PRs)
 - [ ] bring tutorial app thru full cycle:
   - [x] dart-dev (browser)
   - [ ] cordova (2 mobiles)
