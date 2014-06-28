@@ -58,10 +58,13 @@ This inspires us to look at the github API soon and build our own tool, properly
 - [x] Select client app framework (angular.dart);
 - [x] Select deployment mechanism (standard mobile, using cordova/phonegap)
 - [ ] Select angular.dart - to cordova integration / UI methods
-  - [ ] Rikolu?
-  - [ ] Ionic w/ angular.dart changes (ours);
-  - [ ] Ionic w/ app back-porting (angular.dart => angular.js)
-  - [ ] manual / other methods
+  - [x] ~~Rikolu?~~
+  - [x] ~~Ionic w/ angular.dart changes (ours);~~
+  - [x] ~~Ionic w/ app back-porting (angular.dart => angular.js)~~
+  - [x] manual / other methods:
+    - [ ] scripts to wrap dart2js output in relevant cordova CSS+JS;
+    - [ ] integrate / test dart.angular.ui (use bs3, UI elements is/as needed);
+    - [ ] if needed:  port any ionic UI elements (e.g. menubars), individually;
 
 ##### Process:
 
@@ -72,20 +75,33 @@ This inspires us to look at the github API soon and build our own tool, properly
 - [ ] bring tutorial app thru full cycle:
   - [x] dart-dev (browser)
   - [ ] cordova (2 mobiles)
-  - [ ] physical devices (android phone, iOS tablet, iOS phone)
+    - [ ] emulator
+      - [x] iOS
+      - [ ] android => problematic
+    - [ ] physical devices
+      - [ ] iOS
+        - [x] iPad mini
+        - [ ] iPhone (5+)
+        - [ ] iPad
+      - [ ] android
+        - [ ] phone (android 4.4+)
+        - [ ] phone (android 4.0+)
+        - [ ] tablet (android 4.0+)
 - [ ] establish test methods & coverage tracking;
 - [ ] establish test & build tracking (jenkins / drone.io);
 - [ ] establish deployment activity to android store;
 - [ ] establish deployment activity to Apple store;
+  - [x] developer's acct (approved);
+  - [ ] test submission
 - [ ] establish server / web access deployment;
 - [x] documentation: wiki: markdown or restructuredText; docs: sphinxdoc.org
 
 ##### Development:
 
 - [ ] angular.dart tutorial, modify for single even `sens` instance
-  - [ ] browser
-  - [ ] mobile emulators
-  - [ ] mobile hardware / team review, initial reactions;
+  - [x] browser
+  - [x] mobile emulators
+  - [x] mobile hardware / team review, initial reactions;
 - [ ] angular.dart: add suitable input UI methods (clickable / touchable);
 - [ ] full single instance logic
 - [ ] rotating RGB indicators to administrator;
