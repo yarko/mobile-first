@@ -13,3 +13,6 @@
 [submodule "examples/angular.dart.tutorial"]
 	path = examples/angular.dart.tutorial
 	url = git@github.com:angular/angular.dart.tutorial.git
+[submodule "examples/todomvc"]
+	path = examples/todomvc
+	url = https://github.com/tastejs/todomvc.git
