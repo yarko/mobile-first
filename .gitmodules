@@ -10,3 +10,6 @@
 [submodule "examples/angular.dart.ui"]
 	path = examples/angular.dart.ui
 	url = https://github.com/akserg/angular.dart.ui.git
+[submodule "examples/angular.dart.tutorial"]
+	path = examples/angular.dart.tutorial
+	url = git@github.com:angular/angular.dart.tutorial.git
