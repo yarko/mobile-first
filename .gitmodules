@@ -7,3 +7,6 @@
 [submodule "examples/paper-elements"]
 	path = examples/paper-elements
 	url = https://github.com/dart-lang/paper-elements
+[submodule "examples/angular.dart.ui"]
+	path = examples/angular.dart.ui
+	url = https://github.com/akserg/angular.dart.ui.git
