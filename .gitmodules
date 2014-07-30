@@ -4,3 +4,6 @@
 [submodule "olfactory-test-app"]
 	path = olfactory-test-app
 	url = git@github.com:yarko/olfactory-test-app.git
+[submodule "examples/paper-elements"]
+	path = examples/paper-elements
+	url = https://github.com/dart-lang/paper-elements
