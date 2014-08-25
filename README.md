@@ -1,127 +1,108 @@
 <!--
-A nice reference: http://code.tutsplus.com/articles/team-collaboration-with-github--net-29876
+A nice reference:
+http://code.tutsplus.com/articles/team-collaboration-with-github--net-29876
 -->
-# Olfactory Test app (`sens`)
+*This is a work-in-progress, at this point not yet usable
+any but the most ardent.*
 
-This is an exploratory app to create a mobile-first
-app for application of field tests for researchers.
+# Mobile Test app (`sens`)
+
+This is an exploration to create mobile-first, disconnected
+applications for field tests which can be run from a server,
+or installed on mobile devices.
 
 Some of the things of interest:
 
- * how much useful logic can be put into a single-page app thus allowing disconnected function;
- * what are the data limits (size, and otherwise, e.g. off-line validation);
- * how can  a single page app be deployed to disconnectecd mobiles (e.g. iOS, Android, WinMobile);
+ * putting useful logic simply into a single-page app and allow disconnected function;
+ * exploring the 5M data limit (size, off-line validation, etc.) in an installable app;
+ * cordova deployment to mobiles (e.g. iOS, Android, ...);
 
-Initially, the *Recipe Book AngularDart application* from the
-[angular-dart-tutorial](https://angulardart.org/tutorial) is the starting point.
+Some colleagues have commented on the (bleeding) edginess
+of both angular.dart and cordova.
+I expect most of the dart2js results will stay in a mostly central
+area of cordova - I don't expect any significant trouble.
+As for angular.dart on a cordova target - I have no idea.
+Angular dart tutorials seem to work fine.
+I think that what trouble may come will be
+from mixing dart libraries.
+Angular.dart 0.12 seems ok, 0.13 seems to be coming along.
+Note that cordova's stated goal is to obsolete itself,
+so that all device-special
+API points will gradually show up in HTML5.
+Since, at the outset, we are not using any device specific features,
+I am satisfied to use cordova as an execution and installation shell.
+As for dart - ECSMA-6 seems influenced by aspects of dart which
+feel like a modern language.
+The dart team is working to get dart accepted as an standard.
+In the meantime, I am more than happy to minimze or eliminate
+dealing with the messy javascript ecosphere.
 
-See the repository [wiki](https://github.com/yarko/mobile-first/wiki) for more information.
+I have several goals here:
+
+ 1. To establish a toolchain and workflow to get from
+    [angular.dart app](https://angulardart.org) to mobile
+    running application, with testing and debugging in between.
+    Follow the [wiki](https://github.com/yarko/mobile-first/wiki)
+    for help in setting up your development environments.
+
+ 2. Identify libraries for managing
+    the various sizes of target devices. Examples are
+    included as git submodules, including
+    [angular.dart.ui](http://akserg.github.io/angular.dart.ui.demo/build/index.html),
+    a pure dart port of twitter bootstrap.
+    Other examples for your testing are the
+    [angular.dart.tutorial](https://angulardart.org/tutorial)
+    and [paper.elements](https://github.com/dart-lang/paper-elements),
+    a polymer.dart library which initially had some conflicts
+    in running under angular.dart projects.
+
+ 3. An example application, which can be used as a starting point for your own
+    mobile-first, which can operate network-disconnected.  To this end, the example
+    will show use of the
+    [`lawndart` library](http://blog.sethladd.com/2013/02/lawndart-helps-you-write-offline-web.html) to select the local storage based on
+    the capability of your client device.  The example will also include deferred
+    data binding with a server (a django example is planned).
+
+
+For starters, the *Recipe Book AngularDart application* from the
+[angular-dart-tutorial](https://angulardart.org/tutorial)
+is a good starting point and trial app to flush out your developmenet setup.
+
+See the repository [wiki](https://github.com/yarko/mobile-first/wiki)
+for information on setting up a working environment.
 
 ----
 **Note:** Cloning this repository clones the wiki pages as a submodule.
+
 Developer notes may be useful to have locally.
-For OS X, [Mou](http://mouapp.com) is one convenient way to render markdown,
-as well as output pdf (`github` CSS presets are convenient).
+For OS X, [Atom](https://atom.io/) and [Mou](http://mouapp.com)
+provide markdown rendering.
 
 Feel free to update the wiki thru git.
 Simply `cd` to `mobile-first.wiki`, and `git commit` from there.
 
-**Note:** We're pushing our use of github some.
-Currently, looking between [HuBoard.com](https://github.com/rauhryan/huboard) (ruby)
-and [waffle.io](http://waffle.io) (node/coffeescipt).
-We like waffle badges.
-But they don't interface well with the waffle website (only 2 display, label change/clear hard-coded in waffle.io).
-We like that huboard is open source.
-We much prefer that huboard makes easy drag of issues into milestones,
-and that it has separate task and milestones views.
-HuBoard also provides richer filters.
-We were going to use huboard.com on the repo, with
-waffle.io api only for specifying the *nice* badges,
-referring to the more complete (and also hardcoded) labels which huboard.com uses.
-Between the two webhooks, we lost (yes! lost) issues - deleted - so we've disconnected
-waffle.io for the time being.
-We'll see for a short while how huboard behaves.
-Yes, Virginia, robustness is important.
+Note: I use git submodules here.
+It's simple, but takes a little getting used to.
+The key to remember, submodules are separate git clones - in general,
+think of them
+as if they were separate clones (pulling, editing, commiting, pushing from them).
+Committing from this repository (the containing repository) will also
+require updating the submodule, but only to keep indexes consistent.
+You will get used to it.
 
-* just use huboard.com or github for managing tasks.
+To get started, make your first clone:
 
-This inspires us to look at the github API soon and build our own tool, properly
-(a good excuse for a golang project, don't you think?).
+```
+git clone --recursive git@github.com:yarko/mobile-first.git
+```
 
-----
+To continue to get submodules automatically, either descend into the submodule
+directories and `pull` (or `ftch`) from them,
+or, from `mobile-first`, use the command form:
 
+```
+git pull --recurse-submodules
+```
 
-### Startup Tasks / Status:
-
-##### Decisions:
-
-- [x] Select client app framework (angular.dart);
-- [x] Select deployment mechanism (standard mobile, using cordova/phonegap)
-- [ ] Select angular.dart - to cordova integration / UI methods
-  - [x] ~~Rikolu?~~
-  - [x] ~~Ionic w/ angular.dart changes (ours);~~
-  - [x] ~~Ionic w/ app back-porting (angular.dart => angular.js)~~
-  - [x] manual / other methods:
-    - [ ] scripts to wrap dart2js output in relevant cordova CSS+JS;
-    - [ ] integrate / test dart.angular.ui (use bs3, UI elements is/as needed);
-    - [ ] if needed:  port any ionic UI elements (e.g. menubars), individually;
-
-##### Process:
-
-- [x] bringup methods / tutorials for angular.dart
-- [x] bringup methods / tutorials for cordova (w/ ios & android emulation)
-- [ ] bringup methods / tutorials for integrating Rikolu
-- [x] agile tracking (huboard.com w/ waffle.io image tags for now, plus github issues, PRs)
-- [ ] bring tutorial app thru full cycle:
-  - [x] dart-dev (browser)
-  - [ ] cordova (2 mobiles)
-    - [ ] emulator
-      - [x] iOS
-      - [ ] android => problematic
-    - [ ] physical devices
-      - [ ] iOS
-        - [x] iPad mini
-        - [ ] iPhone (5+)
-        - [ ] iPad
-      - [ ] android
-        - [ ] phone (android 4.4+)
-        - [ ] phone (android 4.0+)
-        - [ ] tablet (android 4.0+)
-- [ ] establish test methods & coverage tracking;
-- [ ] establish test & build tracking (jenkins / drone.io);
-- [ ] establish deployment activity to android store;
-- [ ] establish deployment activity to Apple store;
-  - [x] developer's acct (approved);
-  - [ ] test submission
-- [ ] establish server / web access deployment;
-- [x] documentation: wiki: markdown or restructuredText; docs: sphinxdoc.org
-
-##### Development:
-
-- [ ] angular.dart tutorial, modify for single even `sens` instance
-  - [x] browser
-  - [x] mobile emulators
-  - [x] mobile hardware / team review, initial reactions;
-- [ ] angular.dart: add suitable input UI methods (clickable / touchable);
-- [ ] full single instance logic
-- [ ] rotating RGB indicators to administrator;
-- [ ] implementation of 7 turning points;
-- [ ] local data storage (no network checks);
-- [ ] remote data storage (assume network present);
-- [ ] rudimentary server work;
-- [ ] integrate local/connected storage (include data stroage limit checks);
-- [ ] sync logic & functions:  disconnected - then - connected situations;
-- [ ] server: add pandas, basic monitoring, transfer and analysis functions;
-- [ ] server: accounts, tester & admin level permissions;
-
-##### Documentation:
-
-- [x] developer (ongoing / evolution);
-- [ ] end user (test administrator);
-- [ ] manager / site admin docs;
-- [ ] devops / deployment instructions (for future / other projects);
-- [ ] blog / article writup about forking, using this project for other targets & state of the art of single-development mobile apps;
-
-
-
- 
+ useful cheat-sheet on git-submodules,
+ see [git-submodule-cheat-shet](http://blog.jacius.info/git-submodule-cheat-sheet/)
