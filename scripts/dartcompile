@@ -1,0 +1,16 @@
+#!/bin/bash
+
+## this will probably end being a makefile
+
+## compile to js to run locally
+
+# for starters:
+
+OPT=--minify
+dart2js ${OPT} --out="$1.js" $1
+
+## compile and move to cordova project
+
+# rsync the output from dart to the cordova target/www directory,
+# and build the cordova project for:
+#  ios initially, or to specified target.

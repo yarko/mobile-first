@@ -2,7 +2,7 @@
 	path = mobile-first.wiki
 	url = git@github.com:yarko/mobile-first.wiki.git
 [submodule "olfactory-test-app"]
-	path = olfactory-test-app
+	path = snifn
 	url = git@github.com:yarko/olfactory-test-app.git
 [submodule "examples/paper-elements"]
 	path = examples/paper-elements
