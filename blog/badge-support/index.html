@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Badge Support &mdash; yarko.github.io/mobile-first</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.2.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/ablog.ico"/>
+    <link rel="top" title="yarko.github.io/mobile-first" href="../../" />
+  
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  
+  
+  <link rel="stylesheet" href="../../_static/css/font-awesome.css" type="text/css" />
+  
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="../../">yarko.github.io/mobile-first</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="badge-support">
+<h1>Badge Support<a class="headerlink" href="#badge-support" title="Permalink to this headline">¶</a></h1>
+<p>Documentation is an often overlooked part of a software project.
+Today we are releasing badges for your docs,
+so that people can easily see that your docs are up-to-date.</p>
+<div class="section" id="status-badges">
+<h2>Status Badges<a class="headerlink" href="#status-badges" title="Permalink to this headline">¶</a></h2>
+<p>The main use of badges is to show the status of your project&#8217;s build.
+They will display in green for passing,
+red for failing,
+and yellow for unknown states.</p>
+<p>Here are a few examples:</p>
+<p><img alt="green" src="http://img.shields.io/badge/Docs-latest-green.svg" />&nbsp;<img alt="red" src="http://img.shields.io/badge/Docs-release--1.6-red.svg" />&nbsp;<img alt="yellow" src="http://img.shields.io/badge/Docs-No%20Builds-yellow.svg" /></p>
+<p>You can see it in action in the <a class="reference external" href="https://github.com/rtfd/readthedocs.org/blob/master/README.rst">Read the Docs README</a>.
+They will link back to your project&#8217;s documentation page on Read the Docs.</p>
+</div>
+<div class="section" id="project-pages">
+<h2>Project Pages<a class="headerlink" href="#project-pages" title="Permalink to this headline">¶</a></h2>
+<p>You will now see badges embedded in your <a class="reference external" href="https://readthedocs.org/projects/pip/">project page</a>.
+The default badge will be pointed at the <em>default version</em> you have specified for your project.
+The badge URLs look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>https://readthedocs.org/projects/pip/badge/?version=latest
+</pre></div>
+</div>
+<p>You can replace the version argument with any version that you want to show a badge for.
+If you click on the badge icon,
+you will be given snippets for RST, Markdown, and HTML;
+to make embedding it easier.</p>
+<p>If you leave the version argument off,
+it will default to your latest version.
+This is probably best to include in your README,
+since it will stay up to date with your Read the Docs project.</p>
+</div>
+<div class="section" id="design">
+<h2>Design<a class="headerlink" href="#design" title="Permalink to this headline">¶</a></h2>
+<p>We have often wondered what we might make our badges look like.
+Luckily,
+there is a developing standard and service to support badges.
+<a class="reference external" href="http://shields.io">http://shields.io</a> is what we&#8217;ll be using to generate our badges,
+and they look beautiful.</p>
+</div>
+<div class="section" id="feature-requests">
+<h2>Feature Requests<a class="headerlink" href="#feature-requests" title="Permalink to this headline">¶</a></h2>
+<p>This is an initial attempt at adding badges to Read the Docs,
+it&#8217;s a feature we&#8217;ve wanted to add for some time.
+We have some plans to improve badges further,
+but be sure to get in touch with us if you have any feedback on how you would like to see badges used.</p>
+<p>Feel free to <a class="reference external" href="https://github.com/rtfd/readthedocs.org/issues">file an issue</a>,
+or you can always reach us at <a class="reference external" href="mailto:readthedocs&#37;&#52;&#48;gmail&#46;com">readthedocs<span>&#64;</span>gmail<span>&#46;</span>com</a>.</p>
+</div>
+</div>
+
+  <div class="section">
+  
+    
+
+
+<div class="section">
+  <span style="float: left;">
+  
+  </span>
+  <span>&nbsp;</span>
+  <span style="float: right;">
+  
+</div>
+
+  
+  
+  </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../../">
+    <img class="logo" src="../../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+  
+  
+  <h2>
+  
+  <i class="fa fa-calendar"></i>
+    Aug 14, 2014
+  
+  </h2>
+
+  <ul>
+    
+
+  
+
+  
+
+  
+
+  
+  <li><i class="fa-fw fa fa-tags"></i>
+      
+    
+      
+      <a href="../tag/feature/">feature</a>
+      
+    
+      
+      <a href="../tag/badges/">badges</a>
+      
+    </li>
+  
+  
+  </ul>
+
+
+
+  <h3><a href="../">Recent Posts</a></h3>
+  <ul>
+    
+    
+  </ul>
+
+  <h3><a href="../tag/">Tags</a></h3>
+  <style type="text/css">
+    ul.ablog-cloud {list-style: none; overflow: auto;}
+    ul.ablog-cloud li {float: left; height: 20pt; line-height: 18pt; margin-right: 5px;}
+    ul.ablog-cloud a {text-decoration: none; vertical-align: middle;}
+    li.ablog-cloud-1{font-size: 80%;}
+    li.ablog-cloud-2{font-size: 95%;}
+    li.ablog-cloud-3{font-size: 110%;}
+    li.ablog-cloud-4{font-size: 125%;}
+    li.ablog-cloud-5{font-size: 140%;}
+  </style>
+  <ul class="ablog-cloud">
+    
+      
+      <li class="ablog-cloud ablog-cloud-1">
+        <a href="../tag/badges/">badges</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-1">
+        <a href="../tag/feature/">feature</a></li>
+      
+    
+  </ul>
+
+  <h3><a href="../">Archives</a></h3>
+  <ul>
+  
+    
+    <li><a href="../2014/">2014 (1)</a></li>
+    
+  
+  </ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search/" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2014, Yarko Tymciurak.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.2.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.6.0</a>
+      
+      |
+      <a href="../../_sources/blog/badge-support.txt"
+          rel="nofollow">Page source</a></li>
+    </div>
+
+    
+
+    
+  </body>
+</html>
