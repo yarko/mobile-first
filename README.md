@@ -44,6 +44,8 @@ I have several goals here:
     running application, with testing and debugging in between.
     Follow the [wiki](https://github.com/yarko/mobile-first/wiki)
     for help in setting up your development environments.
+    Look at the [blog](https://yarko.github.io/mobile-first)
+    for ongoing developments and hints.
 
  2. Identify libraries for managing
     the various sizes of target devices. Examples are
