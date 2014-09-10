@@ -50,6 +50,6 @@ publish: checkout
 		touch $(GHPDIR)/.nojekyll;\
 	fi
 	git -C $(GHPDIR) add --all .
-	git -C $(GHPDIR) commit -m "Published on: $(date)"
+	git -C $(GHPDIR) commit -m "Published on: `/bin/date`"
 	git -C $(GHPDIR) push
 
