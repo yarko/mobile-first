@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Documentation Setup &mdash; yarko.github.io/mobile-first</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.2.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/ablog.ico"/>
+    <link rel="top" title="yarko.github.io/mobile-first" href="../../" />
+  
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  
+  
+  <link rel="stylesheet" href="../../_static/css/font-awesome.css" type="text/css" />
+  
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="../../">yarko.github.io/mobile-first</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="documentation-setup">
+<h1>Documentation Setup<a class="headerlink" href="#documentation-setup" title="Permalink to this headline">¶</a></h1>
+<p>This is how I setup the project blog for this document.
+If you create your own mobile-first project based on this repository,
+you can simply add or replace items in these docs to your liking.
+Then you won&#8217;t need to setup the orphaned gh-pages branch.</p>
+<p>If you&#8217;d like to setup docs / notes (blog) within your application
+then you might find this helpful.</p>
+<div class="section" id="setting-up-tools">
+<h2>Setting up Tools<a class="headerlink" href="#setting-up-tools" title="Permalink to this headline">¶</a></h2>
+<p>This blog uses <a class="reference external" href="http://sphinx-doc.org">sphinx-docs</a> and <a class="reference external" href="http://ablog.readthedocs.org">ablog</a>, just as <a class="reference external" href="http://blog.readthedocs.com">http://blog.readthedocs.com</a> now does.</p>
+<p>To set these to appear as project docs, a separate output directory was made for
+sphin-docs, named (in this case) after the repository <tt class="docutils literal"><span class="pre">mobile-first</span></tt>.
+To make this output directory hold the rendered documentation,
+first make sure it does not exist in the docs area.
+Then, make a git-submodule to the main directory, thus:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git submodule add -b gh-pages git@github.com:yarko/mobile-first.git ./docs/mobile-first
+</pre></div>
+</div>
+<p>where <tt class="docutils literal"><span class="pre">mobile-first</span></tt> (repository and target) is replaced with your repository.
+This makes the repository a git-submodule to itself.
+Now, following the pattern shown on <a class="reference external" href="https://help.github.com/articles/creating-project-pages-manually">https://help.github.com/articles/creating-project-pages-manually</a>
+do the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cd docs/mobile-first
+$ git checkout --orphan gh-pages
+$ git rm -rf .
+# Note: the new branch won&#39;t appear in the branch list until your first commit
+$ touch .nojekyll
+</pre></div>
+</div>
+<p>You&#8217;ll notice, the makefile for this repository (under the <tt class="docutils literal"><span class="pre">build</span></tt> command)
+has <tt class="docutils literal"><span class="pre">mobile-first</span></tt> as the output directory.  Now:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ make build
+$ git add --all
+$ git commit -a -m &#39;first ablog build to gh-pages&#39;
+$ git push origin gh-pages
+</pre></div>
+</div>
+<p>Give it a few minutes, then you should be able to navigate to your equivalent path of
+<a class="reference external" href="http://yarko.github.io/mobile-first">http://yarko.github.io/mobile-first</a></p>
+<p>Feel free to <a class="reference external" href="https://github.com/yarko/mobile-first/issues">file an issue</a>.</p>
+</div>
+</div>
+
+  <div class="section">
+  
+    
+
+
+<div class="section">
+  <span style="float: left;">
+  
+  </span>
+  <span>&nbsp;</span>
+  <span style="float: right;">
+  
+</div>
+
+  
+  
+  </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../../">
+    <img class="logo" src="../../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+  
+  
+  <h2>
+  
+  <i class="fa fa-calendar"></i>
+    Sep 05, 2014
+  
+  </h2>
+
+  <ul>
+    
+
+  
+
+  
+
+  
+  <li><i class="fa-fw fa fa-folder-open"></i>
+    
+      
+      <a href="../category/setup/">setup</a>
+      
+    </li>
+  
+
+  
+  <li><i class="fa-fw fa fa-tag"></i>
+    
+      
+      <a href="../tag/documentation/">documentation</a>
+      
+    </li>
+  
+  
+  </ul>
+
+
+
+  <h3><a href="../">Recent Posts</a></h3>
+  <ul>
+    
+    
+  </ul>
+
+  <h3><a href="../tag/">Tags</a></h3>
+  <style type="text/css">
+    ul.ablog-cloud {list-style: none; overflow: auto;}
+    ul.ablog-cloud li {float: left; height: 20pt; line-height: 18pt; margin-right: 5px;}
+    ul.ablog-cloud a {text-decoration: none; vertical-align: middle;}
+    li.ablog-cloud-1{font-size: 80%;}
+    li.ablog-cloud-2{font-size: 95%;}
+    li.ablog-cloud-3{font-size: 110%;}
+    li.ablog-cloud-4{font-size: 125%;}
+    li.ablog-cloud-5{font-size: 140%;}
+  </style>
+  <ul class="ablog-cloud">
+    
+      
+      <li class="ablog-cloud ablog-cloud-3">
+        <a href="../tag/documentation/">documentation</a></li>
+      
+    
+  </ul>
+
+  <h3><a href="../category/">Categories</a></h3>
+  <ul>
+  
+    
+    <li><a href="../category/setup/">setup (1)</a></li>
+    
+  
+  </ul>
+
+  <h3><a href="../">Archives</a></h3>
+  <ul>
+  
+    
+    <li><a href="../2014/">2014 (1)</a></li>
+    
+  
+  </ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search/" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2014, Yarko Tymciurak.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.2.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.6.0</a>
+      
+      |
+      <a href="../../_sources/blog/gh-pages.txt"
+          rel="nofollow">Page source</a></li>
+    </div>
+
+    
+
+    
+  </body>
+</html>
