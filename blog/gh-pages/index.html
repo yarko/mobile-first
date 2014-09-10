@@ -57,20 +57,26 @@ you can simply add or replace items in these docs to your liking.
 Then you won&#8217;t need to setup the orphaned gh-pages branch.</p>
 <p>If you&#8217;d like to setup docs / notes (blog) within your application
 then you might find this helpful.</p>
-<div class="section" id="setting-up-tools">
-<h2>Setting up Tools<a class="headerlink" href="#setting-up-tools" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="settup">
+<h2>Settup<a class="headerlink" href="#settup" title="Permalink to this headline">¶</a></h2>
 <p>This blog uses <a class="reference external" href="http://sphinx-doc.org">sphinx-docs</a> and <a class="reference external" href="http://ablog.readthedocs.org">ablog</a>, just as <a class="reference external" href="http://blog.readthedocs.com">http://blog.readthedocs.com</a> now does.</p>
-<p>To set these to appear as project docs, a separate output directory was made for
-sphin-docs, named (in this case) after the repository <tt class="docutils literal"><span class="pre">mobile-first</span></tt>.
-To make this output directory hold the rendered documentation,
-first make sure it does not exist in the docs area.
-Then, make a git-submodule to the main directory, thus:</p>
+<p>I setup a <a class="reference external" href="http://virtualenv.readthedocs.org">virtualenv</a> in the <tt class="docutils literal"><span class="pre">docs</span></tt> direectory, and:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pip install -r requirements.txt
+</pre></div>
+</div>
+<p>then activate the environment when working on docs.</p>
+<p>To set your docs to appear as project github pages, a separate output directory was made for
+sphin-docs, named (in this case) after the repository, <tt class="docutils literal"><span class="pre">mobile-first</span></tt>.</p>
+<p>To make this output directory hold the rendered documentation,
+first make sure it does not exist in the docs area.</p>
+<p>Modify your Makefile to point to your sphinx-docs output directory (see the <tt class="docutils literal"><span class="pre">build</span></tt> rules).</p>
+<p>Then, make a git-submodule to the main directory, thus:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ git submodule add -b gh-pages git@github.com:yarko/mobile-first.git ./docs/mobile-first
 </pre></div>
 </div>
-<p>where <tt class="docutils literal"><span class="pre">mobile-first</span></tt> (repository and target) is replaced with your repository.
+<p>where <tt class="docutils literal"><span class="pre">mobile-first</span></tt> (repository and target) is replaced with your repository name.
 This makes the repository a git-submodule to itself.
-Now, following the pattern shown on <a class="reference external" href="https://help.github.com/articles/creating-project-pages-manually">https://help.github.com/articles/creating-project-pages-manually</a>
+Now, following the pattern shown on <a class="reference external" href="https://help.github.com/articles/creating-project-pages-manually">https://help.github.com/articles/creating-project-pages-manually</a>,
 do the following:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ cd docs/mobile-first
 $ git checkout --orphan gh-pages
@@ -84,11 +90,22 @@ has <tt class="docutils literal"><span class="pre">mobile-first</span></tt> as t
 <div class="highlight-python"><div class="highlight"><pre>$ make build
 $ git add --all
 $ git commit -a -m &#39;first ablog build to gh-pages&#39;
-$ git push origin gh-pages
+# the first time, set the default upstream, so we can &#39;git push` from here on
+$ git push --set-upstream origin gh-pages
 </pre></div>
 </div>
 <p>Give it a few minutes, then you should be able to navigate to your equivalent path of
-<a class="reference external" href="http://yarko.github.io/mobile-first">http://yarko.github.io/mobile-first</a></p>
+<tt class="docutils literal"><span class="pre">http://{{your-github-account}}.github.io/{{your-project-repository}}</span></tt>, e.g.
+<a class="reference external" href="http://yarko.github.io/mobile-first">http://yarko.github.io/mobile-first</a>.</p>
+<p>After this initial step, you should be able to simply edit an entry, and then:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ make build    # to compile the html
+$ make show     # to see the output locally
+# Then, once you&#39;re happy, commit the source; then:
+$ make publish  # to commit &amp; push the generated results
+</pre></div>
+</div>
+<p>and view your results at your equivalent of
+<a class="reference external" href="http://yarko.github.io/mobile-first">http://yarko.github.io/mobile-first</a>.</p>
 <p>Feel free to <a class="reference external" href="https://github.com/yarko/mobile-first/issues">file an issue</a>.</p>
 </div>
 </div>

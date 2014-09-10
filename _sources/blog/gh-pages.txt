@@ -13,23 +13,33 @@ Then you won't need to setup the orphaned gh-pages branch.
 If you'd like to setup docs / notes (blog) within your application
 then you might find this helpful.
 
-Setting up Tools
-----------------------
+Settup
+------
 
 This blog uses sphinx-docs_ and ablog_, just as http://blog.readthedocs.com now does.
 
-To set these to appear as project docs, a separate output directory was made for
-sphin-docs, named (in this case) after the repository ``mobile-first``.
+I setup a `virtualenv`_ in the ``docs`` direectory, and::
+
+    $ pip install -r requirements.txt
+
+then activate the environment when working on docs.
+
+To set your docs to appear as project github pages, a separate output directory was made for
+sphin-docs, named (in this case) after the repository, ``mobile-first``.
+
 To make this output directory hold the rendered documentation,
 first make sure it does not exist in the docs area.
+
+Modify your Makefile to point to your sphinx-docs output directory (see the ``build`` rules).
+
 Then, make a git-submodule to the main directory, thus::
 
     $ git submodule add -b gh-pages git@github.com:yarko/mobile-first.git ./docs/mobile-first
 
 
-where ``mobile-first`` (repository and target) is replaced with your repository.
+where ``mobile-first`` (repository and target) is replaced with your repository name.
 This makes the repository a git-submodule to itself.
-Now, following the pattern shown on https://help.github.com/articles/creating-project-pages-manually
+Now, following the pattern shown on https://help.github.com/articles/creating-project-pages-manually,
 do the following::
 
     $ cd docs/mobile-first
@@ -45,18 +55,31 @@ has ``mobile-first`` as the output directory.  Now::
     $ make build
     $ git add --all
     $ git commit -a -m 'first ablog build to gh-pages'
-    $ git push origin gh-pages
-
+    # the first time, set the default upstream, so we can 'git push` from here on
+    $ git push --set-upstream origin gh-pages
 
 Give it a few minutes, then you should be able to navigate to your equivalent path of
-http://yarko.github.io/mobile-first
+``http://{{your-github-account}}.github.io/{{your-project-repository}}``, e.g.
+http://yarko.github.io/mobile-first.
+
+After this initial step, you should be able to simply edit an entry, and then::
+
+    $ make build    # to compile the html
+    $ make show     # to see the output locally
+    # Then, once you're happy, commit the source; then:
+    $ make publish  # to commit & push the generated results
+
+and view your results at your equivalent of
+http://yarko.github.io/mobile-first.
 
 Feel free to `file an issue`_.
+
 
 .. _ablog: http://ablog.readthedocs.org
 .. _file an issue: https://github.com/yarko/mobile-first/issues
 .. _Mobile First README: https://github.com/yarko/mobile-first/blob/master/README.md
 .. _sphinx-docs: http://sphinx-doc.org
+.. _virtualenv: http://virtualenv.readthedocs.org
 .. |green| image:: http://img.shields.io/badge/Docs-latest-green.svg
 .. |red| image:: http://img.shields.io/badge/Docs-release--1.6-red.svg
 .. |yellow| image:: http://img.shields.io/badge/Docs-No%20Builds-yellow.svg
