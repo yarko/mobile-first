@@ -51,6 +51,7 @@ publish: checkout
 	if [ ! -f .nojekyll ]; then\
 		touch .nojekyll;\
 	fi
+	pwd
 	git add --all .
 	git commit -m "Published on: $(date)"
 	git push
