@@ -27,7 +27,7 @@ help: build
 clean:
 	rm -rf $(BUILDDIR)/dirhtml/*
 	rm -rf $(BUILDDIR)/doctrees/*
-	(cd $(GHPDIR); git rm -rf .)
+	git -C $(GHPDIR) rm -rf .
 
 build:
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) mobile-first
@@ -40,19 +40,16 @@ show:
 	cd $(GHPDIR); python -m SimpleHTTPServer
 
 checkout:
-	cd $(GHPDIR)
-	if [ ! -d .git ]; then\
+	if [ ! -d $(GHPDIR)/.git ]; then\
 	   	echo "no repo found to publish; see https://yarko.github.io/mobile-first/blog/gh-pages";\
 		exit;\
 	fi
 
 publish: checkout
-	cd $(GHPDIR)
-	if [ ! -f .nojekyll ]; then\
-		touch .nojekyll;\
+	if [ ! -f $(GHPDIR)/.nojekyll ]; then\
+		touch $(GHPDIR)/.nojekyll;\
 	fi
-	pwd
-	git add --all .
-	git commit -m "Published on: $(date)"
-	git push
+	git -C $(GHPDIR) add --all .
+	git -C $(GHPDIR) commit -m "Published on: $(date)"
+	git -C $(GHPDIR) push
 

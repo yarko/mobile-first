@@ -2,3 +2,11 @@
 *.lock
 packages
 
+*-
+*--
+*.swp
+
+_build/
+
+# virtualenv for docs / blog:
+Esens
