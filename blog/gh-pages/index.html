@@ -69,14 +69,13 @@ then you might find this helpful.</p>
 sphin-docs, named (in this case) after the repository, <tt class="docutils literal"><span class="pre">mobile-first</span></tt>.</p>
 <p>To make this output directory hold the rendered documentation,
 first make sure it does not exist in the docs area.</p>
-<p>Modify your Makefile to point to your sphinx-docs output directory (see the <tt class="docutils literal"><span class="pre">build</span></tt> rules).</p>
 <p>Then, make a git-submodule to the main directory, thus:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ git submodule add -b gh-pages git@github.com:yarko/mobile-first.git ./docs/mobile-first
 </pre></div>
 </div>
 <p>where <tt class="docutils literal"><span class="pre">mobile-first</span></tt> (repository and target) is replaced with your repository name.
 This makes the repository a git-submodule to itself.
-Now, following the pattern shown on <a class="reference external" href="https://help.github.com/articles/creating-project-pages-manually">https://help.github.com/articles/creating-project-pages-manually</a>,
+Now, similarly as shown on <a class="reference external" href="https://help.github.com/articles/creating-project-pages-manually">https://help.github.com/articles/creating-project-pages-manually</a>,
 do the following:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ cd docs/mobile-first
 $ git checkout --orphan gh-pages
@@ -85,8 +84,10 @@ $ git rm -rf .
 $ touch .nojekyll
 </pre></div>
 </div>
-<p>You&#8217;ll notice, the makefile for this repository (under the <tt class="docutils literal"><span class="pre">build</span></tt> command)
-has <tt class="docutils literal"><span class="pre">mobile-first</span></tt> as the output directory.  Now:</p>
+<p>You&#8217;ll notice in the <tt class="docutils literal"><span class="pre">Makefile</span></tt> (under the <tt class="docutils literal"><span class="pre">build</span></tt> command),
+<tt class="docutils literal"><span class="pre">mobile-first</span></tt> is the output directory.
+Modify your <tt class="docutils literal"><span class="pre">Makefile</span></tt> to output to your sphinx-docs output directory.</p>
+<p>Now:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ make build
 $ git add --all
 $ git commit -a -m &#39;first ablog build to gh-pages&#39;

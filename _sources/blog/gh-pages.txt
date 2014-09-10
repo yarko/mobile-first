@@ -30,8 +30,6 @@ sphin-docs, named (in this case) after the repository, ``mobile-first``.
 To make this output directory hold the rendered documentation,
 first make sure it does not exist in the docs area.
 
-Modify your Makefile to point to your sphinx-docs output directory (see the ``build`` rules).
-
 Then, make a git-submodule to the main directory, thus::
 
     $ git submodule add -b gh-pages git@github.com:yarko/mobile-first.git ./docs/mobile-first
@@ -39,7 +37,7 @@ Then, make a git-submodule to the main directory, thus::
 
 where ``mobile-first`` (repository and target) is replaced with your repository name.
 This makes the repository a git-submodule to itself.
-Now, following the pattern shown on https://help.github.com/articles/creating-project-pages-manually,
+Now, similarly as shown on https://help.github.com/articles/creating-project-pages-manually,
 do the following::
 
     $ cd docs/mobile-first
@@ -49,8 +47,11 @@ do the following::
     $ touch .nojekyll
 
 
-You'll notice, the makefile for this repository (under the ``build`` command)
-has ``mobile-first`` as the output directory.  Now::
+You'll notice in the ``Makefile`` (under the ``build`` command),
+``mobile-first`` is the output directory.
+Modify your ``Makefile`` to output to your sphinx-docs output directory.
+
+Now::
 
     $ make build
     $ git add --all
