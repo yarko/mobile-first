@@ -34,6 +34,11 @@ build:
 	@echo
 	@echo "Build finished. The HTML pages are in mobile-first"
 
+# Look at it locally before publishing it
+# show: build
+show:
+	cd $(GHPDIR); python -m SimpleHTTPServer
+
 checkout:
 	cd $(GHPDIR)
 	if [ ! -d .git ]; then\
