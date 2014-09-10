@@ -10,7 +10,7 @@ Posts
 Wiki
 ----
 
-  mobile-first/wiki_
+  `mobile-first/wiki`_
 
 .. _mobile-first/wiki: http://github.com/yarko/mobile-first/wiki
 
