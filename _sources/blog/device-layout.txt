@@ -72,6 +72,19 @@ for the buttons, and test them.
 .. image:: /_static/pinegrow-blank.png
 
 
+Next, by clicking / dragging from the left pallete, add in order:
+
+- a container
+- a row
+- three columns
+
+Note that you can duplicate an item, such as the column, by clicking it's double-page icon.
+
+The result should resemblee this:
+
+.. image:: /_static/pinegrow-3columns.png
+
+
 
 .. _bootply: http://www.bootply.com/96266
 .. _bootstrapzero: http://www.bootstrapzero.com/
