@@ -69,7 +69,20 @@ Let's layout three different colored buttons for a selector.
 We'll start with pinegrow_'s desktop visual editor to layout some grids
 for the buttons, and test them.
 
+.. image:: /_static/pinegrow-blank.png
 
+
+Next, by clicking / dragging from the left pallete, add in order:
+
+- a container
+- a row
+- three columns
+
+Note that you can duplicate an item, such as the column, by clicking it's double-page icon.
+
+The result should resemblee this:
+
+.. image:: /_static/pinegrow-3columns.png
 
 
 
