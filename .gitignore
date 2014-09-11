@@ -10,3 +10,7 @@ _build/
 
 # virtualenv for docs / blog:
 Esens
+
+# pinegrow bootstrap tool: - ignore it's backups:
+pinegrow.json
+_pgbackup/
