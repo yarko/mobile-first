@@ -6,6 +6,7 @@
 .. |adui| replace:: ``angular.dart.ui``
 .. |bs| replace:: ``bootstrap``
 .. |js| replace:: ``javascript``
+.. |pg| replace:: Pinegrow_
 
 
 Device Layout
@@ -63,6 +64,9 @@ free templates which you can view in bootply and interactively code online with 
 
 .. _here: http://tutsme-webdesign.info/best-bootstrap-visual-editor/
 
+Working an Example
+------------------
+
 We'll start with a simple example.
 
 Let's layout three different colored buttons for a selector.
@@ -107,50 +111,69 @@ I found ``.center-block`` which works for me.
 Notice in the middle panel, the menu at the top.
 You can change the aspect in the middle pane's layout
 by, for example, changing (from the pulldown) to ``phone / 320px``.
-You can change the zoom of your view from the top Pinegrow menu (near the right).
+You can change the zoom of your view from the top |pg| menu (near the right).
 
 .. image:: /_static/pinegrow-phone.png
 
 The code is relatively straightforward.
+You can get to it from the ``Page > Edit code`` menu.
 
 .. image:: /_static/pinegrow-codeview.png
 
-Comparing it to a version of the button portion of
-the dart port of bootstrap (|adui|), it doesn't seem
-like we have too much work to do to combine
-what we developed with Pinegrow with |ad|.
+
+Angular Dart UI
+---------------
+
+Comparing it to a version of the *button demo* of
+|adui| (a port of bootstrap),
+it doesn't look like we have too much work to do
+to combine what we developed with |pg| with |ad|.
 We have ``ng-model`` to add to the buttons, but
 otherwise the button properties from Pingrow should be useable.
-I'll guess that putting the grid *divs* inside
-the ``buttons-ctrl`` *div* will be all that remains.
+I'll guess that putting the grid ``div``\s inside
+the ``buttons-ctrl`` ``div`` will be all that remains.
 
 .. image:: /_static/pinegrow-codewdart.png
 
-We have no javascript (the defaults which Pinegrow inserted
+We have no javascript (the defaults which |pg| inserted
 aren't needed), and we're not using any css beyond |bs|.
 
 
-To show the output of Pinegrow in bootply_,
+``bootply`` Preview
+--------------------
+
+To show the output of |pg| in bootply_,
 I started with the ``Basic starter`` in bootply_
-and then added the container from Pinegrow.
+and then added the container from |pg|.
 Here is the result:
 
 .. image:: /_static/pinegrow-inbootply.png
 
-In the next post, I'll look at using this with |adui|
-and testing in various targets, including trying to run
-on various sized mobile devices.
-Let's see how that goes.
 
+Next Steps
+----------
 
-In the meantime, here is the Pinegrow generated source.
+Here is the |pg| generated source.
 Note that ``line 18`` shows a link to the new css file,
-but it consists of simply an empty line.
-
+which, in our case, is empty.
 
 .. literalinclude:: /_static/new.html
     :language: html
     :linenos:
+
+
+Pinegrow also leaves behind some artifacts which you'll want to be aware of:
+
+- a directory of backups, ``_pgbackup``
+- a configuration file, ``pinegrow.json``
+- a directory of the bootstrap you used, ``bootstrap``
+
+In the next post, I'll look at using this with |adui|
+and testing in various targets, including trying to run
+on various sized mobile devices.
+
+
+Let's see how that goes.
 
 
 .. _bootply: http://www.bootply.com/96266
@@ -161,5 +184,5 @@ but it consists of simply an empty line.
 ----
 
 .. [#] One such review is `here`_.
-.. [#] I started with Pingrow release 1.15, but have moved to the beta release - 1.2b1.
+.. [#] I started with |pg| release 1.15, but have moved to the beta release - 1.2b1.
 

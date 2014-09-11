@@ -84,6 +84,9 @@ We need some help with basic layout for our devices.</p>
 The few that initially impressed me are <a class="reference external" href="http://www.bootply.com/96266">bootply</a>, <a class="reference external" href="http://pinegrow.com/">pinegrow</a>, and <a class="reference external" href="https://divshot.com/features">divshot</a>.
 You can find some starting point layouts for websites at <a class="reference external" href="http://www.bootstrapzero.com/">bootstrapzero</a>,
 free templates which you can view in bootply and interactively code online with <a class="reference external" href="http://www.bootply.com/96266">bootply</a>.</p>
+</div>
+<div class="section" id="working-an-example">
+<h2>Working an Example<a class="headerlink" href="#working-an-example" title="Permalink to this headline">¶</a></h2>
 <p>We&#8217;ll start with a simple example.</p>
 <p>Let&#8217;s layout three different colored buttons for a selector.
 We&#8217;ll start with <a class="reference external" href="http://pinegrow.com/">pinegrow</a>&#8216;s desktop visual editor to layout some grids
@@ -116,33 +119,39 @@ I found <tt class="docutils literal"><span class="pre">.center-block</span></tt>
 <p>Notice in the middle panel, the menu at the top.
 You can change the aspect in the middle pane&#8217;s layout
 by, for example, changing (from the pulldown) to <tt class="docutils literal"><span class="pre">phone</span> <span class="pre">/</span> <span class="pre">320px</span></tt>.
-You can change the zoom of your view from the top Pinegrow menu (near the right).</p>
+You can change the zoom of your view from the top <a class="reference external" href="http://pinegrow.com/">Pinegrow</a> menu (near the right).</p>
 <img alt="../../_images/pinegrow-phone.png" src="../../_images/pinegrow-phone.png" />
-<p>The code is relatively straightforward.</p>
+<p>The code is relatively straightforward.
+You can get to it from the <tt class="docutils literal"><span class="pre">Page</span> <span class="pre">&gt;</span> <span class="pre">Edit</span> <span class="pre">code</span></tt> menu.</p>
 <img alt="../../_images/pinegrow-codeview.png" src="../../_images/pinegrow-codeview.png" />
-<p>Comparing it to a version of the button portion of
-the dart port of bootstrap (<tt class="docutils literal"><span class="pre">angular.dart.ui</span></tt>), it doesn&#8217;t seem
-like we have too much work to do to combine
-what we developed with Pinegrow with <tt class="docutils literal"><span class="pre">angular.dart</span></tt>.
+</div>
+<div class="section" id="angular-dart-ui">
+<h2>Angular Dart UI<a class="headerlink" href="#angular-dart-ui" title="Permalink to this headline">¶</a></h2>
+<p>Comparing it to a version of the <em>button demo</em> of
+<tt class="docutils literal"><span class="pre">angular.dart.ui</span></tt> (a port of bootstrap),
+it doesn&#8217;t look like we have too much work to do
+to combine what we developed with <a class="reference external" href="http://pinegrow.com/">Pinegrow</a> with <tt class="docutils literal"><span class="pre">angular.dart</span></tt>.
 We have <tt class="docutils literal"><span class="pre">ng-model</span></tt> to add to the buttons, but
 otherwise the button properties from Pingrow should be useable.
-I&#8217;ll guess that putting the grid <em>divs</em> inside
-the <tt class="docutils literal"><span class="pre">buttons-ctrl</span></tt> <em>div</em> will be all that remains.</p>
+I&#8217;ll guess that putting the grid <tt class="docutils literal"><span class="pre">div</span></tt>s inside
+the <tt class="docutils literal"><span class="pre">buttons-ctrl</span></tt> <tt class="docutils literal"><span class="pre">div</span></tt> will be all that remains.</p>
 <img alt="../../_images/pinegrow-codewdart.png" src="../../_images/pinegrow-codewdart.png" />
-<p>We have no javascript (the defaults which Pinegrow inserted
+<p>We have no javascript (the defaults which <a class="reference external" href="http://pinegrow.com/">Pinegrow</a> inserted
 aren&#8217;t needed), and we&#8217;re not using any css beyond <tt class="docutils literal"><span class="pre">bootstrap</span></tt>.</p>
-<p>To show the output of Pinegrow in <a class="reference external" href="http://www.bootply.com/96266">bootply</a>,
+</div>
+<div class="section" id="bootply-preview">
+<h2><tt class="docutils literal"><span class="pre">bootply</span></tt> Preview<a class="headerlink" href="#bootply-preview" title="Permalink to this headline">¶</a></h2>
+<p>To show the output of <a class="reference external" href="http://pinegrow.com/">Pinegrow</a> in <a class="reference external" href="http://www.bootply.com/96266">bootply</a>,
 I started with the <tt class="docutils literal"><span class="pre">Basic</span> <span class="pre">starter</span></tt> in <a class="reference external" href="http://www.bootply.com/96266">bootply</a>
-and then added the container from Pinegrow.
+and then added the container from <a class="reference external" href="http://pinegrow.com/">Pinegrow</a>.
 Here is the result:</p>
 <img alt="../../_images/pinegrow-inbootply.png" src="../../_images/pinegrow-inbootply.png" />
-<p>In the next post, I&#8217;ll look at using this with <tt class="docutils literal"><span class="pre">angular.dart.ui</span></tt>
-and testing in various targets, including trying to run
-on various sized mobile devices.
-Let&#8217;s see how that goes.</p>
-<p>In the meantime, here is the Pinegrow generated source.
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>Here is the <a class="reference external" href="http://pinegrow.com/">Pinegrow</a> generated source.
 Note that <tt class="docutils literal"><span class="pre">line</span> <span class="pre">18</span></tt> shows a link to the new css file,
-but it consists of simply an empty line.</p>
+which, in our case, is empty.</p>
 <div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -248,6 +257,16 @@ but it consists of simply an empty line.</p>
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </td></tr></table></div>
+<p>Pinegrow also leaves behind some artifacts which you&#8217;ll want to be aware of:</p>
+<ul class="simple">
+<li>a directory of backups, <tt class="docutils literal"><span class="pre">_pgbackup</span></tt></li>
+<li>a configuration file, <tt class="docutils literal"><span class="pre">pinegrow.json</span></tt></li>
+<li>a directory of the bootstrap you used, <tt class="docutils literal"><span class="pre">bootstrap</span></tt></li>
+</ul>
+<p>In the next post, I&#8217;ll look at using this with <tt class="docutils literal"><span class="pre">angular.dart.ui</span></tt>
+and testing in various targets, including trying to run
+on various sized mobile devices.</p>
+<p>Let&#8217;s see how that goes.</p>
 <hr class="docutils" />
 <table class="docutils footnote" frame="void" id="id3" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -258,7 +277,7 @@ but it consists of simply an empty line.</p>
 <table class="docutils footnote" frame="void" id="id4" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>I started with Pingrow release 1.15, but have moved to the beta release - 1.2b1.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>I started with <a class="reference external" href="http://pinegrow.com/">Pinegrow</a> release 1.15, but have moved to the beta release - 1.2b1.</td></tr>
 </tbody>
 </table>
 </div>
