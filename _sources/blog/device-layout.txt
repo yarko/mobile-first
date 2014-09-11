@@ -30,7 +30,7 @@ use on a tablet.
 
 There's already enough to learn.
 Now, we're going to add |adui|_, a dart implementation of ``twitter`` |bs|_
-which will use dart written components with |bs| ``CSS`` (and grids).
+which will use dart written components with |bs|_ ``CSS`` (and grids).
 
 If you haven't felt overwhelmed yet, you might now.
 We need some help with basic layout for our devices.
@@ -51,8 +51,8 @@ Tools Overview
 
 There are two things to note:
 
-- we will avoid using any more than the ``CSS`` parts of |bs|;
-- for any |js| introduced, we'll look for |adui| equivalents;
+- we will avoid using any more than the ``CSS`` parts of |bs|_;
+- for any |js| introduced, we'll look for |adui|_ equivalents;
 
   * where we can't readily, remember that calling |js| from dart is ok.
 
@@ -125,9 +125,9 @@ Angular Dart UI
 ---------------
 
 Comparing it to a version of the *button demo* of
-|adui| (a port of bootstrap),
+|adui|_ (a port of bootstrap),
 it doesn't look like we have too much work to do
-to combine what we developed with |pg| with |ad|.
+to combine what we developed with |pg| with |ad|_.
 We have ``ng-model`` to add to the buttons, but
 otherwise the button properties from Pingrow should be useable.
 I'll guess that putting the grid ``div``\s inside
@@ -136,7 +136,7 @@ the ``buttons-ctrl`` ``div`` will be all that remains.
 .. image:: /_static/pinegrow-codewdart.png
 
 We have no javascript (the defaults which |pg| inserted
-aren't needed), and we're not using any css beyond |bs|.
+aren't needed), and we're not using any css beyond |bs|_.
 
 
 ``bootply`` Preview
@@ -168,7 +168,7 @@ Pinegrow also leaves behind some artifacts which you'll want to be aware of:
 - a configuration file, ``pinegrow.json``
 - a directory of the bootstrap you used, ``bootstrap``
 
-In the next post, I'll look at using this with |adui|
+In the next post, I'll look at using this with |adui|_
 and testing in various targets, including trying to run
 on various sized mobile devices.
 
