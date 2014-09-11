@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Device Layout &mdash; yarko.github.io/mobile-first</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.2.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/ablog.ico"/>
+    <link rel="top" title="yarko.github.io/mobile-first" href="../../" />
+  
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  
+  
+  <link rel="stylesheet" href="../../_static/css/font-awesome.css" type="text/css" />
+  
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="../../">yarko.github.io/mobile-first</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="device-layout">
+<h1>Device Layout<a class="headerlink" href="#device-layout" title="Permalink to this headline">¶</a></h1>
+<p><em>This is the first post on this topic, looking at some loayout tools (and their potential limitations).</em></p>
+<p>Let&#8217;s say you&#8217;ve created one of the examples
+(e.g. one of the <a class="reference external" href="https://angulardart.org/"><tt class="docutils literal"><span class="pre">angular.dart</span></tt></a> tutorials)
+all the way through the cycles of building and running:</p>
+<ul class="simple">
+<li>dart in chromium via the <a class="reference external" href="https://www.dartlang.org/tools/editor/">dart editor</a></li>
+<li><a class="reference external" href="https://www.dartlang.org/tools/dart2js/">dart2js</a> result in a browser</li>
+<li>on <a class="reference external" href="https://www.dartlang.org/tools/editor/mobile.html">android from the dart GUI</a></li>
+<li><a class="reference external" href="http://cordova.apache.org/docs/en/3.5.0/guide_cli_index.md.html#The%20Command-Line%20Interface">cordova emulators</a> for iOS and android (through several size devices)</li>
+<li>cordova built apps on target iOS and android devices.</li>
+</ul>
+<p>You will have noticed that (for example) the <tt class="docutils literal"><span class="pre">angular.dart</span></tt> <a class="reference external" href="https://angulardart.org/tutorial/">tutorial</a>
+might look fine in a browser, and on a phone, but is too small to
+use on a tablet.</p>
+<p>There&#8217;s already enough to learn.
+Now, we&#8217;re going to add <a class="reference external" href="http://www.angulardartui.com/"><tt class="docutils literal"><span class="pre">angular.dart.ui</span></tt></a>, a dart implementation of <tt class="docutils literal"><span class="pre">twitter</span></tt> <a class="reference external" href="http://getbootstrap.com/"><tt class="docutils literal"><span class="pre">bootstrap</span></tt></a>
+which will use dart written components with <tt class="docutils literal"><span class="pre">bootstrap</span></tt> <tt class="docutils literal"><span class="pre">CSS</span></tt> (and grids).</p>
+<p>If you haven&#8217;t felt overwhelmed yet, you might now.
+We need some help with basic layout for our devices.</p>
+<div class="section" id="tools-overview">
+<h2>Tools Overview<a class="headerlink" href="#tools-overview" title="Permalink to this headline">¶</a></h2>
+<p>There are two things to note:</p>
+<ul class="simple">
+<li>we will avoid using any more than the <tt class="docutils literal"><span class="pre">CSS</span></tt> parts of <tt class="docutils literal"><span class="pre">bootstrap</span></tt>;</li>
+<li>for any <tt class="docutils literal"><span class="pre">javascript</span></tt> introduced, we&#8217;ll look for <tt class="docutils literal"><span class="pre">angular.dart.ui</span></tt> equivalents;<ul>
+<li>where we can&#8217;t readily, remember that calling <tt class="docutils literal"><span class="pre">javascript</span></tt> from dart is ok.</li>
+</ul>
+</li>
+</ul>
+<p>You can search for reviews <a class="footnote-reference" href="#id2" id="id1">[1]</a> for bootsrap visual editors.
+The few that initially impressed me are <a class="reference external" href="http://www.bootply.com/96266">bootply</a>, <a class="reference external" href="http://pinegrow.com/">pinegrow</a>, and <a class="reference external" href="https://divshot.com/features">divshot</a>.
+You can find some starting point layouts for websites at <a class="reference external" href="http://www.bootstrapzero.com/">bootstrapzero</a>,
+free templates which you can view in bootply and interactively code online with <a class="reference external" href="http://www.bootply.com/96266">bootply</a>.</p>
+<p>We&#8217;ll start with a simple example.</p>
+<p>Let&#8217;s layout three different colored buttons for a selector.
+We&#8217;ll start with <a class="reference external" href="http://pinegrow.com/">pinegrow</a>&#8216;s desktop visual editor to layout some grids
+for the buttons, and test them.</p>
+<hr class="docutils" />
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>One such review is <a class="reference external" href="http://tutsme-webdesign.info/best-bootstrap-visual-editor/">here</a>.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+  <div class="section">
+  
+    
+
+
+<div class="section">
+  <span style="float: left;">
+  
+  
+  <a href="../gh-pages/">
+    <i class="fa fa-arrow-circle-left"></i>
+    Documentation Setup
+  </a>
+  
+  </span>
+  <span>&nbsp;</span>
+  <span style="float: right;">
+  
+</div>
+
+  
+  
+  </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../../">
+    <img class="logo" src="../../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+  
+  
+  <h2>
+  
+  <i class="fa fa-calendar"></i>
+    Sep 10, 2014
+  
+  </h2>
+
+  <ul>
+    
+
+  
+
+  
+
+  
+  <li><i class="fa-fw fa fa-folder-open"></i>
+    
+      
+      <a href="../category/device/">device</a>
+      
+    
+      
+      <a href="../category/bootstrap/">bootstrap</a>
+      
+    </li>
+  
+
+  
+  <li><i class="fa-fw fa fa-tag"></i>
+    
+      
+      <a href="../tag/layout/">layout</a>
+      
+    </li>
+  
+  
+  </ul>
+
+
+
+  <h3><a href="../">Recent Posts</a></h3>
+  <ul>
+    
+    
+      <li><a href="../gh-pages/">Sep 05 - Documentation Setup</a></li>
+    
+  </ul>
+
+  <h3><a href="../tag/">Tags</a></h3>
+  <style type="text/css">
+    ul.ablog-cloud {list-style: none; overflow: auto;}
+    ul.ablog-cloud li {float: left; height: 20pt; line-height: 18pt; margin-right: 5px;}
+    ul.ablog-cloud a {text-decoration: none; vertical-align: middle;}
+    li.ablog-cloud-1{font-size: 80%;}
+    li.ablog-cloud-2{font-size: 95%;}
+    li.ablog-cloud-3{font-size: 110%;}
+    li.ablog-cloud-4{font-size: 125%;}
+    li.ablog-cloud-5{font-size: 140%;}
+  </style>
+  <ul class="ablog-cloud">
+    
+      
+      <li class="ablog-cloud ablog-cloud-1">
+        <a href="../tag/documentation/">documentation</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-1">
+        <a href="../tag/layout/">layout</a></li>
+      
+    
+  </ul>
+
+  <h3><a href="../category/">Categories</a></h3>
+  <ul>
+  
+    
+    <li><a href="../category/bootstrap/">bootstrap (1)</a></li>
+    
+  
+    
+    <li><a href="../category/device/">device (1)</a></li>
+    
+  
+    
+    <li><a href="../category/setup/">setup (1)</a></li>
+    
+  
+  </ul>
+
+  <h3><a href="../">Archives</a></h3>
+  <ul>
+  
+    
+    <li><a href="../2014/">2014 (2)</a></li>
+    
+  
+  </ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search/" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2014, Yarko Tymciurak.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.2.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.6.0</a>
+      
+      |
+      <a href="../../_sources/blog/device-layout.txt"
+          rel="nofollow">Page source</a></li>
+    </div>
+
+    
+
+    
+  </body>
+</html>
