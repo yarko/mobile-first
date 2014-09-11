@@ -69,7 +69,7 @@ Let's layout three different colored buttons for a selector.
 We'll start with pinegrow_'s desktop visual editor to layout some grids
 for the buttons, and test them.
 
-
+.. image:: /_static/pinegrow-blank.png
 
 
 
