@@ -2,8 +2,10 @@
 A nice reference:
 http://code.tutsplus.com/articles/team-collaboration-with-github--net-29876
 -->
-*This is a work-in-progress, at this point not yet usable
+*This is a work-in-progress, at this point not usable by
 any but the most ardent.*
+*Follow developments on the [blog](https://yarko.github.io/mobile-first).*
+*Find setup guides on the [wiki](https://github.com/yarko/mobile-first/wiki).*
 
 # Mobile Test app (`sens`)
 
