@@ -1,0 +1,70 @@
+#!/bin/bash
+# Given a dart sdk and editor installation as follows:
+#  release:  /usr/local/dart-rel  (or /usr/local/dart)
+#  developer: /usr/local/dart-dev
+# and given links to each of the command-line binaries such that:
+#  .../dart-rel/.../bin/dart  =>  /usr/local/bin/dart-rel
+#  .../dart-dev/.../bin/dart  =>  /usr/local/bin/dart-dev
+# and so forth,  then this script is for linking to the default
+# desired package, that is it shifts links from:
+#   /usr/local/bin/dart  =>  /usr/local/bin/dart-rel
+# to:
+#   /uar/local/bin/dart  =>  //usr/local/bin/dart-dev
+# and the other direction also.
+#
+# In this way, updates to either the release or developer preview
+# do not affect the paths of the default command line tools.
+# Also, when running tools drom DartEditor.app, it uses it's local
+# tools.
+#
+# So this script only affects the command line tools.
+##
+
+usage() {
+    cat << EOF
+    USAGE:
+      active-dart       - reports the current linkage;
+      active-dart [arg] - switches the links to arg, where arg is in [dev, rel]
+EOF
+    exit 1
+}
+
+if [[ $# -eq 0 ]]; then
+    ls -l $(which dart) | awk '/->/ { print $(NF-2), $(NF-1), $NF; next} /./ {print $NF}'
+    exit 0
+fi
+
+[[ $# -gt 1 ]] && usage
+
+## these shell re's don't work?
+rre='r?(e|el)'
+dre='d?(e|ev)'
+
+if [[ $1 =~ ^r ]]; then
+    # assume we're setting all to release, don't care if they already are:
+    s=/usr/local/dart
+    if [[ ! -d $s ]]; then
+        s=$s-rel
+        if [[ ! -d $s ]]; then
+            echo "no dart release directory found.  Exiting."
+            exit 2
+        fi
+    fi
+    # symlink, force + verbose:
+    for i in $(ls -p $s/dart-sdk/bin | fgrep -v '/'); do
+        ln -fsv /usr/local/bin/$i-rel /usr/local/bin/$i
+    done
+elif [[ $1 =~ ^d ]]; then
+    s=/usr/local/dart-dev
+    if [[ ! -d $s ]]; then
+        echo "no dart developer release directory found.  Exiting."
+        exit 2
+    fi
+    for i in $(ls -p $s/dart-sdk/bin | fgrep -v '/'); do
+        ln -fsv /usr/local/bin/$i-dev /usr/local/bin/$i
+    done
+else
+    echo "bad arg: $1"
+    usage
+fi
+
