@@ -50,7 +50,7 @@ if os.environ.get('READTHEDOCS', None) == 'True':
     skip_pickling = True
 
 blog_title = 'Mobile First, Unconnected'
-blog_baseurl = 'http://yarko.github.io/mobile-first'
+blog_baseurl = 'http://yarko.github.io/mobile-first/'
 # blog_baseurl = 'http://localhost:8000'
 blog_locations = {
     'Chicago': ('Chicago, IL', None),
