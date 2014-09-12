@@ -8,13 +8,15 @@
 
 osx=1
 if [ $(uname -s) != "Darwin" ]; then
-    echo "Sorry, we currently only support OS/X installation." \
-         "It shouldn\'t be that much to update, though - so have a look" \
-         " at what we're doing (/Applications directory checking and linking should change)" \
-         " and how your installations work, and give us a pull request."
-    echo "We'll go ahead for you now, without any /Applications peeks, though." \
-         " That should get you into a working state (the DartEditors will be" \
-         " in /usr/local/dart-*/)."
+    cat << EOF
+      Sorry, we currently only support OS/X installation.
+      It shouldn\'t be that much to update, though - so have a look
+        at what we're doing (/Applications directory checking and linking should change)
+        and how your installations work, and give us a pull request.
+      We'll go ahead for you now, without any /Applications peeks, though.
+        That should get you into a working state (the DartEditors will be
+        in /usr/local/dart-*/).
+EOF
     unset osx
 fi
 
