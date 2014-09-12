@@ -86,3 +86,4 @@ Feel free to `file an issue`_.
 .. |yellow| image:: http://img.shields.io/badge/Docs-No%20Builds-yellow.svg
 .. |nbsp| unicode:: 0xA0 
    :trim:
+

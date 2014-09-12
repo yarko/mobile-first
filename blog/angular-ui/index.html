@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Device Layout, Part 2 &mdash; yarko.github.io/mobile-first</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.2.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/ablog.ico"/>
+    <link rel="top" title="yarko.github.io/mobile-first" href="../../" />
+  
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  
+  
+  <link rel="stylesheet" href="../../_static/css/font-awesome.css" type="text/css" />
+  
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="../../">yarko.github.io/mobile-first</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="device-layout-part-2">
+<h1>Device Layout, Part 2<a class="headerlink" href="#device-layout-part-2" title="Permalink to this headline">¶</a></h1>
+<p><em>This is the second post on this topic, where we apply a bootstrap layout to an angular.dart project,
+and test it on various devices.</em></p>
+<div class="section" id="review">
+<h2>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<p>From the last time, we used <a class="reference external" href="http://pinegrow.com/">Pinegrow</a> to build a three-button layout which we hope to make
+usable on a variety of devices.</p>
+<p>To get started, review the <a class="reference external" href="/blog/device-layout/index.html">device layout</a> post, and have your <tt class="docutils literal"><span class="pre">new.html</span></tt> file
+ready to extract from.</p>
+<p>If you haven&#8217;t already, download, install and configure the <a class="reference external" href="https://www.dartlang.org/tools/editor/">Dart Editor</a>.</p>
+<p>Because we are interacting with so many potentially bleeding-edge system
+components, I strongly recommend you install using the <a class="reference external" href="https://github.com/yarko/mobile-first"><tt class="docutils literal"><span class="pre">mobile-first</span></tt></a>
+makefile command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ make dart-install
+</pre></div>
+</div>
+<p>This will install both the <em>release</em> and the <em>dev</em> version of dart.
+If you run into problems with one, you should try the other.
+Libraries are changing rapidly.
+What is found broken in the release may first be corrected in the <tt class="docutils literal"><span class="pre">dev</span></tt> releast.
+Conversly, what is update in the <tt class="docutils literal"><span class="pre">dev</span></tt> release may break dependencies,
+may work in the <tt class="docutils literal"><span class="pre">release</span></tt>.
+In the case of new changes or features, it can take some time to sort
+out the cross-dependencies, and your spotting a problem and reporting it
+may accelerate its resolution.</p>
+</div>
+<div class="section" id="bootstrap-in-dart">
+<h2>Bootstrap in Dart<a class="headerlink" href="#bootstrap-in-dart" title="Permalink to this headline">¶</a></h2>
+<p>Start the DartEditor.
+I also start a programming editor (<tt class="docutils literal"><span class="pre">vim</span></tt>); you may like to do this also.</p>
+<p>As of this writing, DartEditor <tt class="docutils literal"><span class="pre">1.7</span></tt> is not producing results, so stick with the <tt class="docutils literal"><span class="pre">1.6</span></tt> release.
+In the <tt class="docutils literal"><span class="pre">mobile-first</span></tt> scripts repository, you&#8217;ll find the <tt class="docutils literal"><span class="pre">active-dart</span></tt> script,
+which will report which release of dart you have active for <tt class="docutils literal"><span class="pre">CLI</span></tt>.
+You can also change which the currently active one is (assumes you used <tt class="docutils literal"><span class="pre">make</span> <span class="pre">dart-install</span></tt>).</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">work on this post is continuing...</p>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+    
+
+
+<div class="section">
+  <span style="float: left;">
+  
+  
+  <a href="../device-layout/">
+    <i class="fa fa-arrow-circle-left"></i>
+    Device Layout
+  </a>
+  
+  </span>
+  <span>&nbsp;</span>
+  <span style="float: right;">
+  
+</div>
+
+  
+  
+  </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../../">
+    <img class="logo" src="../../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+  
+  
+  <h2>
+  
+  <i class="fa fa-calendar"></i>
+    Sep 11, 2014
+  
+  </h2>
+
+  <ul>
+    
+
+  
+
+  
+
+  
+  <li><i class="fa-fw fa fa-folder-open"></i>
+    
+      
+      <a href="../category/device/">device</a>
+      
+    
+      
+      <a href="../category/bootstrap/">bootstrap</a>
+      
+    </li>
+  
+
+  
+  <li><i class="fa-fw fa fa-tag"></i>
+    
+      
+      <a href="../tag/angulardartui/">angular.dart.ui</a>
+      
+    </li>
+  
+  
+  </ul>
+
+
+
+  <h3><a href="../">Recent Posts</a></h3>
+  <ul>
+    
+    
+      <li><a href="../device-layout/">Sep 10 - Device Layout</a></li>
+    
+      <li><a href="../gh-pages/">Sep 05 - Documentation Setup</a></li>
+    
+  </ul>
+
+  <h3><a href="../tag/">Tags</a></h3>
+  <style type="text/css">
+    ul.ablog-cloud {list-style: none; overflow: auto;}
+    ul.ablog-cloud li {float: left; height: 20pt; line-height: 18pt; margin-right: 5px;}
+    ul.ablog-cloud a {text-decoration: none; vertical-align: middle;}
+    li.ablog-cloud-1{font-size: 80%;}
+    li.ablog-cloud-2{font-size: 95%;}
+    li.ablog-cloud-3{font-size: 110%;}
+    li.ablog-cloud-4{font-size: 125%;}
+    li.ablog-cloud-5{font-size: 140%;}
+  </style>
+  <ul class="ablog-cloud">
+    
+      
+      <li class="ablog-cloud ablog-cloud-1">
+        <a href="../tag/angulardartui/">angular.dart.ui</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-1">
+        <a href="../tag/documentation/">documentation</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-1">
+        <a href="../tag/layout/">layout</a></li>
+      
+    
+  </ul>
+
+  <h3><a href="../category/">Categories</a></h3>
+  <ul>
+  
+    
+    <li><a href="../category/bootstrap/">bootstrap (2)</a></li>
+    
+  
+    
+    <li><a href="../category/device/">device (2)</a></li>
+    
+  
+    
+    <li><a href="../category/setup/">setup (1)</a></li>
+    
+  
+  </ul>
+
+  <h3><a href="../">Archives</a></h3>
+  <ul>
+  
+    
+    <li><a href="../2014/">2014 (3)</a></li>
+    
+  
+  </ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search/" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2014, Yarko Tymciurak.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.2.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.6.0</a>
+      
+      |
+      <a href="../../_sources/blog/angular-ui.txt"
+          rel="nofollow">Page source</a></li>
+    </div>
+
+    
+
+    
+  </body>
+</html>

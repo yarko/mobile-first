@@ -57,7 +57,7 @@ There are two things to note:
   * where we can't readily, remember that calling |js| from dart is ok.
 
 
-You can search for reviews [#]_ for bootsrap visual editors.
+You can search for reviews [#]_ for bootstrap visual editors.
 The few that initially impressed me are bootply_, pinegrow_, and divshot_.
 You can find some starting point layouts for websites at bootstrapzero_,
 free templates which you can view in bootply and interactively code online with bootply_.
@@ -74,6 +74,7 @@ We'll start with pinegrow_'s desktop visual editor to layout some grids
 for the buttons, and test them [#]_.
 
 .. image:: /_static/pinegrow-blank.png
+   :target: /_static/pinegrow-blank.png
 
 
 Next, by clicking / dragging from the left pallete, add in order:
@@ -89,6 +90,7 @@ by clicking it's double-page icon.
 The result should resemble this:
 
 .. image:: /_static/pinegrow-3columns.png
+   :target: /_static/pinegrow-3columns.png
 
 Delete the column paragraphs by selecting them in the right tree.
 Once selected, you can either use your delete key, or the *trash can* icon
@@ -106,6 +108,7 @@ and searched for a ``center`` CSS class in bootstrap -
 I found ``.center-block`` which works for me.
 
 .. image:: /_static/pinegrow-buttons.png
+   :target: /_static/pinegrow-buttons.png
 
 
 Notice in the middle panel, the menu at the top.
@@ -114,26 +117,28 @@ by, for example, changing (from the pulldown) to ``phone / 320px``.
 You can change the zoom of your view from the top |pg| menu (near the right).
 
 .. image:: /_static/pinegrow-phone.png
+   :target: /_static/pinegrow-phone.png
 
 The code is relatively straightforward.
 You can get to it from the ``Page > Edit code`` menu.
 
 .. image:: /_static/pinegrow-codeview.png
+   :target: /_static/pinegrow-codeview.png
 
 
 Angular Dart UI
 ---------------
 
-Comparing it to a version of the *button demo* of
-|adui|_ (a port of bootstrap),
-it doesn't look like we have too much work to do
-to combine what we developed with |pg| with |ad|_.
+Comparing it to a version of the *button demo* of |adui|_,
+it doesn't look like we'll have too much work
+to combine what we've developed in |pg| with |ad|_.
 We have ``ng-model`` to add to the buttons, but
 otherwise the button properties from Pingrow should be useable.
 I'll guess that putting the grid ``div``\s inside
 the ``buttons-ctrl`` ``div`` will be all that remains.
 
 .. image:: /_static/pinegrow-codewdart.png
+   :target: /_static/pinegrow-codewdart.png
 
 We have no javascript (the defaults which |pg| inserted
 aren't needed), and we're not using any css beyond |bs|_.
@@ -148,6 +153,7 @@ and then added the container from |pg|.
 Here is the result:
 
 .. image:: /_static/pinegrow-inbootply.png
+   :target: /_static/pinegrow-inbootply.png
 
 
 Next Steps
