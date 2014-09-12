@@ -40,6 +40,8 @@ html_domain_indices = False
 html_show_sourcelink = True
 html_favicon = '_static/ablog.ico'
 
+todo_include_todos = True
+
 # ABLOG
 
 templates_path = [ablog.get_html_templates_path()]
