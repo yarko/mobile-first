@@ -25,8 +25,19 @@ fi
 
 alias unzip-stream="python -c \"import zipfile,sys,StringIO;zipfile.ZipFile(StringIO.StringIO(sys.stdin.read())).extractall(sys.argv[1] if len(sys.argv) == 2 else '.')\""
 
-DART_REL=https://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-macos-ia32.zip
-DART_DEV=https://storage.googleapis.com/dart-archive/channels/dev/release/latest/editor/darteditor-macos-x64.zip
+if [[ ${osx} ]]; then
+    DART_REL=https://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-macos-ia32.zip
+    DART_DEV=https://storage.googleapis.com/dart-archive/channels/dev/release/latest/editor/darteditor-macos-x64.zip
+else
+    if [[ uname -s | grep -i 'Linux|Ubuntu' ]]; then
+        DART_REL=https://storage.googleapis.com/dart-archive/channels/stable/release/latest/linux_packages/debian_wheezy/dart_1.6.0-1_amd64.deb
+        DART_DEV=https://storage.googleapis.com/dart-archive/channels/dev/release/latest/linux_packages/debian_wheezy/dart_1.7.0-dev.2.0-1_amd64.deb
+    else
+        echo 'No suitable Dart package found for you; Exiting!'
+        echo "See https://www.dartlang.org/tools/download.html for more information."
+        exit 3
+    fi
+fi
 
 exists() {
     # check argument for existing on path
