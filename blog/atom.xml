@@ -3,7 +3,7 @@
   <title type="text">Mobile First, Unconnected</title>
   <id>http://yarko.github.io/mobile-first/blog/atom.xml</id>
   <updated>2014-09-11T00:00:00Z</updated>
-  <link href="http://yarko.github.io/mobile-first" />
+  <link href="http://yarko.github.io/mobile-first/" />
   <link href="http://yarko.github.io/mobile-first/blog/atom.xml" rel="self" />
   <generator uri="http://blog.readthedocs.org" version="0.2.2">ABlog</generator>
   <entry xml:base="http://yarko.github.io/mobile-first/blog/atom.xml">
