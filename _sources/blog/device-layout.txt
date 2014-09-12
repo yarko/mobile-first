@@ -74,7 +74,7 @@ We'll start with pinegrow_'s desktop visual editor to layout some grids
 for the buttons, and test them [#]_.
 
 .. image:: /_static/pinegrow-blank.png
-   :target: /_images/pinegrow-blank.png
+   :target: /mobile-first/_images/pinegrow-blank.png
 
 
 Next, by clicking / dragging from the left pallete, add in order:
@@ -90,7 +90,7 @@ by clicking it's double-page icon.
 The result should resemble this:
 
 .. image:: /_static/pinegrow-3columns.png
-   :target: /_images/pinegrow-3columns.png
+   :target: /mobile-first/_images/pinegrow-3columns.png
 
 Delete the column paragraphs by selecting them in the right tree.
 Once selected, you can either use your delete key, or the *trash can* icon
@@ -108,7 +108,7 @@ and searched for a ``center`` CSS class in bootstrap -
 I found ``.center-block`` which works for me.
 
 .. image:: /_static/pinegrow-buttons.png
-   :target: /_images/pinegrow-buttons.png
+   :target: /mobile-first/_images/pinegrow-buttons.png
 
 
 Notice in the middle panel, the menu at the top.
@@ -117,13 +117,13 @@ by, for example, changing (from the pulldown) to ``phone / 320px``.
 You can change the zoom of your view from the top |pg| menu (near the right).
 
 .. image:: /_static/pinegrow-phone.png
-   :target: /_images/pinegrow-phone.png
+   :target: /mobile-first/_images/pinegrow-phone.png
 
 The code is relatively straightforward.
 You can get to it from the ``Page > Edit code`` menu.
 
 .. image:: /_static/pinegrow-codeview.png
-   :target: /_images/pinegrow-codeview.png
+   :target: /mobile-first/_images/pinegrow-codeview.png
 
 
 Angular Dart UI
@@ -138,7 +138,7 @@ I'll guess that putting the grid ``div``\s inside
 the ``buttons-ctrl`` ``div`` will be all that remains.
 
 .. image:: /_static/pinegrow-codewdart.png
-   :target: /_images/pinegrow-codewdart.png
+   :target: /mobile-first/_images/pinegrow-codewdart.png
 
 We have no javascript (the defaults which |pg| inserted
 aren't needed), and we're not using any css beyond |bs|_.
@@ -153,7 +153,7 @@ and then added the container from |pg|.
 Here is the result:
 
 .. image:: /_static/pinegrow-inbootply.png
-   :target: /_images/pinegrow-inbootply.png
+   :target: /mobile-first/_images/pinegrow-inbootply.png
 
 
 Next Steps
