@@ -1,0 +1,127 @@
+#!/usr/bin/env bash
+#------#
+# dart-install:
+#  install dart editors for github.com/yarko/mobile-first
+#
+##
+# At this point, this is for OS/X - need to add checks/behaviors for Linux & other installations, as users provide them.
+
+osx=1
+if [ $(uname -s) != "Darwin" ]; then
+    echo "Sorry, we currently only support OS/X installation." \
+         "It shouldn\'t be that much to update, though - so have a look" \
+         " at what we're doing (/Applications directory checking and linking should change)" \
+         " and how your installations work, and give us a pull request."
+    echo "We'll go ahead for you now, without any /Applications peeks, though." \
+         " That should get you into a working state (the DartEditors will be" \
+         " in /usr/local/dart-*/)."
+    unset osx
+fi
+
+# a compacted version of this: http://serverfault.com/questions/26474/unzipping-files-that-are-flying-in-through-a-pipe
+# - file needs to be able to fit in memory, which means < a few Gig should work these days...
+
+alias unzip-stream="python -c \"import zipfile,sys,StringIO;zipfile.ZipFile(StringIO.StringIO(sys.stdin.read())).extractall(sys.argv[1] if len(sys.argv) == 2 else '.')\""
+
+DART_REL=https://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-macos-ia32.zip
+DART_DEV=https://storage.googleapis.com/dart-archive/channels/dev/release/latest/editor/darteditor-macos-x64.zip
+
+exists() {
+    # check argument for existing on path
+    v=$(which $1)
+    [ ${#v} -gt 0 ]
+}
+
+check_dart() {
+    # see if dart already exists anywhere
+    if exists dart; then
+        echo "You already appear to have dart installed:"
+        ls -l $(which dart)
+        exit 1
+    fi
+    # even if not on path, is it installed?
+    # this is mac osx specific at this point:
+    if [ ${osx} ]; then
+        osx_check='/Applications/DartEditor*.app'
+    else
+        osx_check=""
+    fi
+    darts=($(ls -d /usr/local/dart* ${osx_check}))
+    if [ ${#darts[@]} -gt 0 ]; then
+        echo "You appear to have ${#darts[@]} dart directories in the target area already:" \
+             "${darts[@]}"
+        exit 1
+    fi
+}
+
+check_java_version() {
+    # first, is there java in our path?
+    if ! exists java; then
+        echo "You do not seem to have java.  Either fix your path," \
+             "or install java to before installing the Dart Editor."
+        exit 1
+    fi
+    # make sure we have java 1.6 or later
+    #  the first two parts of the pipeline are expected to produce:
+    #    java version "1.7.0_60"
+    #  for example, where we want to get just [1.7] out of it.
+    #    -f 3 gets the 3rd slug; -c2-4 gets the 1.7 out...
+    jv=$(java -version 2>&1 | head -1 | cut -d ' ' -f 3 | cut -c2-4)
+
+    # since no floating comare, use 'bc';
+    if (( $(bc <<< "$jv < 1.6") == 1 )); then
+        echo "Dart Editor requires at least java 1.6; you have ${jv}" \
+             "Please update your java first."
+        exit 1
+    fi
+    echo "Java version ${jv} ok..."
+}
+
+
+
+# make sure it doesn't already exist
+check_dart
+
+check_java_version
+
+# now get both release and dev versions;
+# - put each in /usr/local{dart-rel,dart-dev};
+# - link all bin files from each to /usr/local/bin
+# - link default (rel or dev) to the appropriate default command;
+# - link the editor instances into /Applications
+
+# put each in /usr/local{dart-rel,dart-dev};
+
+( cd /usr/local;
+  curl ${DART_REL} | unzip-stream;
+  mv dart dart-rel;
+  curl ${DART_DEV} | unzip-stream;
+  mv dart dart-dev;
+)
+
+
+# - link all bin files from each to /usr/local/bin
+# - link default (rel or dev) to the appropriate default command;
+
+local=/usr/local/bin
+dflt=rel
+
+# t: the type of this op: rel or dev:
+for t in rel dev; do
+    dart=/usr/local/dart-${t}/dart-sdk/bin
+    # skip any directories
+    for i in $(ls -p ${dart} | fgrep -v '/'); do
+        # installed => local link naming pattern:
+        # .../dart-rel/.../dart2js => dart2js-rel
+        ln -s ${dart}/$i ${local}/$i-${t}
+        # depending on default being release or dev version,
+        #  link the "natural" name to the correct one:
+        [ $t = $dflt ] && ln -s ${local}/$i-${t} ${local}/$i
+    done
+    # - link the editor instances into /Applications
+    if [ ${osx} ]; then
+        ln -s /usr/local/dart-${t}/DartEditor.app /Applications/DartEditor-${t}.app
+    fi
+done
+
+
